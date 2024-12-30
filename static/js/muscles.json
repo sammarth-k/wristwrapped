@@ -1,0 +1,14 @@
+{
+    "pecs": "pectoralis_major_muscle",
+    "biceps": "biceps_brachii",
+    "forearm": "forearm_muscles",
+    "quads": "quads",
+    "delts": "deltoids",
+    "abs": "abs",
+    "tris": "triceps",
+    "hamstrings": "thigh_muscles_back",
+    "upper_back": "upper_back",
+    "glutes": "gluteal_muscle",
+    "lats": "lats",
+    "calves": "calf_muscle"
+}

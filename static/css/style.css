@@ -1,0 +1,198 @@
+#inputs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: rgba(242, 136, 138, 1);
+}
+
+body {
+    color: #4b4b4b;
+}
+
+h1 {
+    color: #f5f5f5;
+}
+
+@keyframes fadeout {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes wipe {
+    0% {
+        height: 100vh;
+    }
+
+    100% {
+        height: 0;
+    }
+}
+
+#wipe {
+    vertical-align: top;
+    height: 100vh;
+    z-index: 99;
+    display: none;
+    background-color: rgba(242, 136, 138, 1);
+}
+
+#uplabel {
+    cursor: pointer;
+    background-color: rgba(242, 136, 138, 1);
+    border: 1px solid #f5f5f5;
+    color: #f5f5f5;
+}
+
+#uplabel:hover {
+    animation: hover 0.5s;
+    background-color: #f5f5f5;
+    color: rgba(242, 136, 138, 1);
+}
+
+#strongdata {
+    opacity: 0;
+    position: absolute;
+    z-index: -1;
+}
+
+#guide label {
+    cursor: default;
+    padding: 0.5rem;
+    font-size: 1rem;
+}
+
+#gradient {
+    background: linear-gradient(to right, rgba(242, 136, 138, 0), rgba(242, 136, 138, 1));
+}
+
+#heatmap {
+    display: none;
+}
+
+#charts {
+    display: none;
+}
+
+#summarycontent {
+    display: none;
+}
+
+#summaryinfo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#igsvg {
+    display: none;
+}
+
+#igstory {
+    height: 100vh;
+    width: 100vw;
+    z-index: 2;
+    background-color: rgba(242, 136, 138, 0.5);
+    position: fixed;
+    top: 0;
+    display: none;
+
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+
+}
+
+#igstory img {
+    margin-top: 5vh;
+    height: 80vh;
+    border: #D7E2F1 3px solid;
+}
+
+#igstoryclose {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    background-color: rgba(242, 136, 138, 0);
+    color: #f5f5f5;
+    border: none;
+    font-size: 1.5rem;
+    margin: 0;
+    z-index: 3;
+    padding: 0;
+}
+
+@keyframes color {
+    0% {
+        color: #f5f5f5;
+    }
+
+    100% {
+        color: rgba(242, 136, 138, 1);
+    }
+}
+
+#igstory button:hover {
+
+    animation: color 0.5s;
+    color: rgba(242, 136, 138, 1);
+    scale: 1.1;
+}
+
+#igpngbutton {
+    cursor: pointer;
+    background-color: rgba(242, 136, 138, 1);
+    border: 0;
+    padding: 0.5rem;
+    color: #f5f5f5;
+    margin-bottom: 1rem;
+}
+
+@keyframes hover {
+    0% {
+        background-color: rgba(242, 136, 138, 1);
+        color: #f5f5f5;
+    }
+
+    100% {
+        background-color: #f5f5f5;
+        color: rgba(242, 136, 138, 1);
+    }
+}
+
+#igpngbutton:hover,
+#igdownload:hover {
+    animation: hover 1s;
+    background-color: #f5f5f5;
+    color: rgba(242, 136, 138, 1);
+}
+
+#igdownload {
+    margin-top: 1rem;
+    cursor: pointer;
+    background-color: rgba(242, 136, 138, 1);
+    border: 0;
+    padding: 0.5rem;
+    color: #f5f5f5;
+    margin-bottom: 1rem;
+}
+
+button {
+    border: 0;
+    border-radius: 5px;
+}
+
+@media screen and (max-width: 600px) {
+    #heatmap svg {
+        width: 50vw;
+    }
+}
