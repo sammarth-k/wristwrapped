@@ -19,7 +19,8 @@ function downloadIG() {
     var imgsrc = canvas.toDataURL("image/png");
     document.getElementById("igstoryimg").src = imgsrc; // Send image to #igstory img
   };
-  img.src = "data:image/svg+xml;base64," + btoa(svgData);
+  img.src =
+    "data:image/svg+xml;base64," + btoa(decodeURIComponent(encodeURIComponent(svgData)));
 }
 
 document.getElementById("igpngbutton").addEventListener("click", downloadIG);
