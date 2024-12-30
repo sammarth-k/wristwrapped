@@ -16,7 +16,7 @@ function downloadIG() {
     ctx.fillRect(0, 0, canvas.width, canvas.height);
 
     ctx.drawImage(img, 0, 0, img.width, img.height);
-    var imgsrc = canvas.toDataURL("image/png");
+    var imgsrc = canvas.toDataURL("image/jpeg", 1.0);
     document.getElementById("igstoryimg").src = imgsrc; // Send image to #igstory img
   };
   img.src =
@@ -32,6 +32,6 @@ document.getElementById("igstoryclose").addEventListener("click", function () {
 document.getElementById("igdownload").addEventListener("click", function () {
   var a = document.createElement("a");
   a.href = document.getElementById("igstoryimg").src;
-  a.download = "wristwrapped.png";
+  a.download = "wristwrapped.jpeg";
   a.click();
 });
