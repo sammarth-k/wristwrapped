@@ -6,10 +6,12 @@ function downloadIG() {
   var ctx = canvas.getContext("2d");
   var img = new Image();
   img.onload = function () {
-    var scaleFactor = 10; // Increase this value for higher resolution
+    var scaleFactor = window.devicePixelRatio || 1; // Use device pixel ratio for better resolution on mobile
     canvas.width = img.width * scaleFactor;
     canvas.height = img.height * scaleFactor;
-    ctx.scale(scaleFactor, scaleFactor);
+    canvas.style.width = img.width + "px";
+    canvas.style.height = img.height + "px";
+    ctx.setTransform(scaleFactor, 0, 0, scaleFactor, 0, 0);
 
     // Fill the canvas with white color
     ctx.fillStyle = "#FFFFFF";
