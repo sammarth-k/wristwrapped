@@ -32,11 +32,10 @@ function checkHeaders(headers) {
 function oneRepMax(weight, reps) {
   return weight * (1 + reps / 30); // Epley formula
 }
-
-// function to get the day of the year
+// function to get the day of the year, mapped to 1-366 or 1-365
 function getDayOfYear(date) {
-  const start = new Date(date.getFullYear(), 0, 0);
-  const diff = date - start;
+  const start = new Date(date.getFullYear(), 0, 1);
+  const diff = date - start + (start.getTimezoneOffset() - date.getTimezoneOffset()) * 60 * 1000;
   const oneDay = 1000 * 60 * 60 * 24;
-  return Math.floor(diff / oneDay);
+  return Math.ceil(diff / oneDay) + 1;
 }

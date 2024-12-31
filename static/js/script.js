@@ -121,7 +121,6 @@ function bestLift(data) {
     "<b>Squat 1RM:</b> " + parseInt(squatMax) + " lbs";
   document.getElementById("igsquat").innerHTML = parseInt(squatMax) + "lbs"; //update in shareable
 }
-
 // function to get consistency
 function consistency(data) {
   // for each date in data, replace date with day of the year
@@ -132,18 +131,17 @@ function consistency(data) {
   }
 
   const consistencyChart = document.getElementById("consistency");
-  const rectangles = consistencyChart.getElementsByTagName("rect");
-
   const igConsistencyChart = document.getElementById("igconsistency");
   const igRectangles = igConsistencyChart.getElementsByTagName("g");
-
-  for (let i = 0; i < rectangles.length; i++) {
+  for (let i = 0; i < 367; i++) {
     // if there is an exercise on a day, fill the rectangle
     if (data.some((d) => d.date === i)) {
-      rectangles[i].style.fill = "rgba(242, 136, 138, 1)";
-      const igPaths = igRectangles[i].getElementsByTagName("path");
-      for (let j = 0; j < igPaths.length; j++) {
-        igPaths[j].style.fill = "rgba(242, 136, 138, 1)";
+      document.getElementById(i).style.fill = "rgba(242, 136, 138, 1)";
+      if (igRectangles[i-1]) {
+        const igPaths = igRectangles[i-1].getElementsByTagName("path");
+        for (let j = 0; j < igPaths.length; j++) {
+          igPaths[j].style.fill = "rgba(242, 136, 138, 1)";
+        }
       }
     }
   }

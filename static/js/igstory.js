@@ -6,7 +6,7 @@ function downloadIG() {
   var ctx = canvas.getContext("2d");
   var img = new Image();
   img.onload = function () {
-    var scaleFactor = window.devicePixelRatio || 1; // Use device pixel ratio for better resolution on mobile
+    var scaleFactor = 10; // Use scale factor of 0.5 for mobile resolution, 1 for desktop resolution
     canvas.width = img.width * scaleFactor;
     canvas.height = img.height * scaleFactor;
     canvas.style.width = img.width + "px";
