@@ -6,7 +6,15 @@ function downloadIG() {
   var ctx = canvas.getContext("2d");
   var img = new Image();
   img.onload = function () {
-    var scaleFactor = 10; // Use scale factor of 0.5 for mobile resolution, 1 for desktop resolution
+    // scale conditional for mobile vs desktop
+    if (window.innerWidth < 768) {
+      var scaleFactor =  window.devicePixelRatio || 1;
+    }
+    else
+    {
+      var scaleFactor = 10;
+    }
+    
     canvas.width = img.width * scaleFactor;
     canvas.height = img.height * scaleFactor;
     canvas.style.width = img.width + "px";
@@ -22,7 +30,8 @@ function downloadIG() {
     document.getElementById("igstoryimg").src = imgsrc; // Send image to #igstory img
   };
   img.src =
-    "data:image/svg+xml;base64," + btoa(decodeURIComponent(encodeURIComponent(svgData)));
+    "data:image/svg+xml;base64," +
+    btoa(decodeURIComponent(encodeURIComponent(svgData)));
 }
 
 document.getElementById("igpngbutton").addEventListener("click", downloadIG);
