@@ -13,7 +13,7 @@ const correctHeaders = [
   "RPE",
 ];
 
-const currentYear = new Date().getFullYear();
+const currentYear = 2024 //new Date().getFullYear();
 
 // boolean function to check if headers are correct
 function checkHeaders(headers) {

@@ -48,6 +48,12 @@ function mapMuscleGroup(exerciseName) {
       glutes: 40,
       lower_back: 10,
     },
+    "deadlift (barbell)": {
+      hamstrings: 40,
+      glutes: 35,
+      upper_back: 15,
+      lats: 10,
+    },
   };
 
   for (const key in exerciseMap) {
